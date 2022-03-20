@@ -18,6 +18,8 @@ mongoose.connect(uri,()=>{
 })
 
 app.use(bodyparser.json());
+app.use("/uploads",express.static('uploads'))    //to make upload folder public
+
 app.listen(port,()=>{
     console.log("connected to express server")
 })
