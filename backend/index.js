@@ -7,6 +7,7 @@ const User = require("./modules/user");
 var bodyparser = require("body-parser");
 
 const user_routes = require("./routes/user");
+const photo_routes = require("./routes/photo");
 
 
 
@@ -31,4 +32,5 @@ app.get('/',(req,res)=>{
 });
 
 app.use("/user",user_routes);
+app.use("/upload",photo_routes);
 

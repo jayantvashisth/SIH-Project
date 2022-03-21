@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-const UserSchema = new Schema({
+const PhotoSchema = new Schema({
 
     username:{
         type:String,
@@ -14,9 +14,8 @@ const UserSchema = new Schema({
         required:true,
         unique:true,
     },
-    password:{
-        type:String,
-        required:true
+    photo:{
+        type:String
     },
     Date:{
         type: Date, 
@@ -24,5 +23,5 @@ const UserSchema = new Schema({
     }
 })
 
-const User = mongoose.model('user',UserSchema);
-module.exports = User;
+const Photo = mongoose.model('photo',PhotoSchema);
+module.exports = Photo;
