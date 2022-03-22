@@ -5,6 +5,7 @@ const port = 5000;
 
 const User = require("./modules/user");
 var bodyparser = require("body-parser");
+var cors = require('cors')
 
 const user_routes = require("./routes/user");
 const photo_routes = require("./routes/photo");
@@ -19,6 +20,7 @@ mongoose.connect(uri,()=>{
 })
 
 app.use(bodyparser.json());
+app.use(cors())
 app.use("/uploads",express.static('uploads'))    //to make upload folder public
 
 app.listen(port,()=>{
