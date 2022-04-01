@@ -1,12 +1,12 @@
 import './App.css';
 import React, { useState } from "react";
 import Modal from "./components/Modal"
+import Signup from './components/Signup';
 
 
 function App() {
-  // document.querySelector('.passimg').addEventListener('click', () => {
-  //   // display popup
-  // })
+
+  /*
   
   const [first, setfirst] = useState("");
 
@@ -21,32 +21,35 @@ function App() {
         'Content-Type': 'application/json'
         // 'Content-Type': 'application/x-www-form-urlencoded',
       },
-      body: JSON.stringify({ username: "computer" }) // body data type must match "Content-Type" header
+      body: JSON.stringify({ username: "jake" }) // body data type must match "Content-Type" header
     });
     const photu = await response.json(); // parses JSON response into native JavaScript objects
     console.log(photu);
     const array = photu.split(",");
     console.log(array);
-    setfirst(array[0]);
+    let temp2 = Math.floor(Math.random() * 6);
+    setfirst(array[temp2]);
     console.log(first);
+    // let temp = "http:\\localhost:5000\\"
+    console.log("http:\\\\localhost:5000\\" + first);
 
   }
 
-  
-  const onclick = (e)=>{
-    
+
+  const onclick = (e) => {
+
     postData();
   }
 
 
-
+*/
 
   return (
     <>
-      <button className="btn" onClick={onclick}>click me </button>
-      <img src="http\\localhost:5000\"{...first}  alt="no internet" />  
+      {/* <button className="btn" onClick={onclick}>click me </button> */}
+      {/* <img src={`http:\\\\localhost:5000\\` + first} alt="no internet" /> */}
 
-      <Modal/>
+      <Signup/>
 
     </>
   );

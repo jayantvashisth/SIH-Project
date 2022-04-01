@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from "react";
 
 
-export default function Modal() {
+export default function Signup() {
 
     const [first, setfirst] = useState("");
 
@@ -15,7 +15,7 @@ export default function Modal() {
             credentials: 'same-origin', // include, *same-origin, omit
             headers: {
                 'Content-Type': 'application/json',
-                
+
                 // 'Content-Type': 'application/x-www-form-urlencoded',
             },
             body: JSON.stringify({ username: "jake" }) // body data type must match "Content-Type" header
@@ -43,14 +43,32 @@ export default function Modal() {
 
 
     return (
-        <div>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel fuga adipisci placeat incidunt numquam at veritatis sapiente aliquam doloribus voluptatem!</p>
+        <div className='mt-5 container'>
+            <h1 className='row justify-content-center'>Sign up page</h1>
+
+
+            <form>
+                <div className="mb-3">
+                    <label for="exampleInputEmail1" className="form-label">Email address</label>
+                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                    <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div className="mb-3">
+                    <label for="exampleInputPassword1" className="form-label">Password</label>
+                    <input type="password" className="form-control" id="exampleInputPassword1" />
+                </div>
+                <div className="mb-3">
+                    <p className='row justify-content-center'>or</p>
+                    <button onClick={onclick} type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        Create Password
+                    </button>
+                </div>
+
+                <button type="submit" className="btn btn-primary">Submit</button>
+            </form>
 
 
 
-            <button onClick={onclick} type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                Create Password
-            </button>
 
 
             <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
