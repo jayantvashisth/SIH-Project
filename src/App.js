@@ -2,6 +2,7 @@ import './App.css';
 import React, { useState } from "react";
 import Modal from "./components/Modal"
 import Signup from './components/Signup';
+import PasswordState from './context/passwordState';
 
 
 function App() {
@@ -48,8 +49,10 @@ function App() {
     <>
       {/* <button className="btn" onClick={onclick}>click me </button> */}
       {/* <img src={`http:\\\\localhost:5000\\` + first} alt="no internet" /> */}
+      <PasswordState>
 
-      <Signup/>
+        <Signup />
+      </PasswordState>
 
     </>
   );
