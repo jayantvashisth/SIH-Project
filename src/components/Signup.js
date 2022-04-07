@@ -22,14 +22,14 @@ import pic18 from "../context/uploads/1647892577737.png"
 import pic19 from "../context/uploads/1647892577736.png"
 import pic20 from "../context/uploads/1647892577735.png"
 
-var photos = [pic1, pic2, pic3,pic4,pic5,pic6,pic7,pic8,pic9,pic10,pic11,pic12,pic13,pic14,pic15,pic16,pic17,pic18,pic19,pic20];
-
+var photos = [pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8, pic9, pic10, pic11, pic12, pic13, pic14, pic15, pic16, pic17, pic18, pic19, pic20];
+var passString = "";
 
 export default function Signup() {
 
     const context = useContext(passwordContext);
     const { first, setfirst } = context;
-    const [arr, setarr] = useState([pic1, pic2, pic3,pic4,pic5,pic6,pic7,pic8,pic9,pic10,pic11,pic12,pic13,pic14,pic15,pic16,pic17,pic18,pic19,pic20]);
+    const [arr, setarr] = useState([pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8, pic9, pic10, pic11, pic12, pic13, pic14, pic15, pic16, pic17, pic18, pic19, pic20]);
     // let a=[pic1,pic2,pic3];
     const [changevariableimportance, setvariable] = useState(1);
 
@@ -50,8 +50,12 @@ export default function Signup() {
         }
         setarr(photos)
     }
-    const item1 = arr.slice(0,6);
-    console.log("this is item" + item1);
+    const item1 = arr.slice(0, 4);
+    const item2 = arr.slice(4, 8);
+    const item3 = arr.slice(8, 12);
+    const item4 = arr.slice(12, 16);
+    const item5 = arr.slice(16, 20);
+
 
     const onclick = (e) => {
         console.log("clicked")
@@ -62,7 +66,7 @@ export default function Signup() {
         else if (changevariableimportance == 0) {
             setvariable(1);
         }
-        console.log(photos);
+
     }
 
     return (
@@ -100,14 +104,91 @@ export default function Signup() {
                             <div className="container-fluid">
                                 <div className="row">
 
-                                    {arr.map((photo) => {
+                                    {item1.map((photo) => {
                                         return (
                                             <div className="col-md-3 ms-auto">
                                                 <div className="card" >
-                                                    {console.log("this is photo" + { photo })}
+
 
                                                     <img src={photo} className="card-img-top" alt="..." onClick={() => {
-                                                        console.log(photo);
+                                                        console.log(photo.substring(14,27));
+                                                        passString+=photo.substring(14,27);
+                                                    }} />
+
+
+                                                </div>
+                                            </div>
+                                        )
+                                    })}
+                                </div>
+                                <div className="row">
+
+                                    {item2.map((photo) => {
+                                        return (
+                                            <div className="col-md-3 ms-auto">
+                                                <div className="card" >
+
+
+                                                    <img src={photo} className="card-img-top" alt="..." onClick={() => {
+                                                        console.log(photo.substring(14,27));
+                                                        passString+=photo.substring(14,27);
+                                                    }} />
+
+
+                                                </div>
+                                            </div>
+                                        )
+                                    })}
+                                </div>
+                                <div className="row">
+
+                                    {item3.map((photo) => {
+                                        return (
+                                            <div className="col-md-3 ms-auto">
+                                                <div className="card" >
+
+
+                                                    <img src={photo} className="card-img-top" alt="..." onClick={() => {
+                                                        console.log(photo.substring(14,27));
+                                                        passString+=photo.substring(14,27);
+                                                    }} />
+
+
+                                                </div>
+                                            </div>
+                                        )
+                                    })}
+                                </div>
+                                <div className="row">
+
+                                    {item4.map((photo) => {
+                                        return (
+                                            <div className="col-md-3 ms-auto">
+                                                <div className="card" >
+
+
+                                                    <img src={photo} className="card-img-top" alt="..." onClick={() => {
+                                                        console.log(photo.substring(14,27));
+                                                        passString+=photo.substring(14,27);
+                                                    }} />
+
+
+                                                </div>
+                                            </div>
+                                        )
+                                    })}
+                                </div>
+                                <div className="row">
+
+                                    {item5.map((photo) => {
+                                        return (
+                                            <div className="col-md-3 ms-auto">
+                                                <div className="card" >
+
+
+                                                    <img src={photo} className="card-img-top" alt="..." onClick={() => {
+                                                        console.log(photo.substring(14,27));
+                                                        passString+=photo.substring(14,27);
                                                     }} />
 
 
@@ -121,7 +202,10 @@ export default function Signup() {
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" className="btn btn-primary">Understood</button>
+                            <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={()=>{
+                                console.log(passString)
+                                passString="";
+                            }}>Understood</button>
                         </div>
                     </div>
                 </div>
